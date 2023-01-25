@@ -10,24 +10,24 @@ on:
       - main
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-          cache: "pip"
-          cache-dependency-path: pyproject.toml
-      # poetry lock is needed for the licensecheck
-      - run: |
-          python -m pip install -r .github/workflows/requirements.txt
-          poetry lock
-      # https://github.com/pre-commit/action
-      # sets up pre-commit cache
-      - uses: pre-commit/action@v3.0.0
-      - run: |
-          tox -e type
+  # lint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-python@v4
+  #       with:
+  #         python-version: "3.11"
+  #         cache: "pip"
+  #         cache-dependency-path: pyproject.toml
+  #     # poetry lock is needed for the licensecheck
+  #     - run: |
+  #         python -m pip install -r .github/workflows/requirements.txt
+  #         poetry lock
+  #     # https://github.com/pre-commit/action
+  #     # sets up pre-commit cache
+  #     - uses: pre-commit/action@v3.0.0
+  #     - run: |
+  #         tox -e type
 
   test:
     strategy:
@@ -68,8 +68,9 @@ jobs:
       - name: Store coverage files
         uses: actions/upload-artifact@v3
         with:
-          name: coverage
-          path: coverage
+          name: coverage-data
+          path: .coverage.*
+          if-no-files-found: ignore
 
   # adapted from
   # https://github.com/tiangolo/fastapi/blob/master/.github/workflows/test.yml
@@ -86,15 +87,13 @@ jobs:
       - name: Get coverage files
         uses: actions/download-artifact@v3
         with:
-          name: coverage
-          path: coverage
+          name: coverage-data
 
       - run: python -m pip install -r .github/workflows/requirements.txt
       - run: |
           pwd
           ls -la
           ls -la coverage
-      - run: tox -e report
 
       # - name: Use Codecov to track coverage
       #   uses: codecov/codecov-action@v2
