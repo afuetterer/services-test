@@ -51,9 +51,15 @@ jobs:
           mkdir coverage
           pwd
           ls -la
+          ls -la coverage
       - run: tox
         env:
           COVERAGE_FILE: coverage/.coverage.${{ runner.os }}-py${{ matrix.python-version }}
+      - run: |
+          mkdir coverage
+          pwd
+          ls -la
+          ls -la coverage
       # https://github.com/actions/cache/blob/main/examples.md#python---pip
       - name: Cache .tox directory
         uses: actions/cache@v3
