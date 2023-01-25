@@ -48,17 +48,13 @@ jobs:
           cache-dependency-path: pyproject.toml
       - run: python -m pip install -r .github/workflows/requirements.txt
       - run: |
-          mkdir coverage
           pwd
           ls -la
-          ls -la coverage
       - run: tox
         env:
           COVERAGE_FILE: coverage/.coverage.${{ runner.os }}-py${{ matrix.python-version }}
       - run: |
-          pwd
           ls -la
-          ls -la coverage
       # https://github.com/actions/cache/blob/main/examples.md#python---pip
       - name: Cache .tox directory
         uses: actions/cache@v3
@@ -91,9 +87,11 @@ jobs:
 
       - run: python -m pip install -r .github/workflows/requirements.txt
       - run: |
-          pwd
           ls -la
-          ls -la coverage
+          pip install coverage[toml]
+      - run: |
+          coverage combine
+          coverage report
 
       # - name: Use Codecov to track coverage
       #   uses: codecov/codecov-action@v2
