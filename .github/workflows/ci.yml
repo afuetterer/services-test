@@ -51,7 +51,7 @@ jobs:
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
           key: |
-            os-${{ runner.os }}.py-${{ matrix.python-version }}.${{ hashFiles('poetry.lock') }}.${{ hashFiles('.pre-commit-config.yaml') }}.${{ hashFiles('.github/workflows/requirements.txt') }}
+            os-${{ runner.os }}.py-${{ matrix.python-version }}.${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
 
       - run: |
           python -m pip install -r .github/workflows/requirements.txt
@@ -101,13 +101,8 @@ jobs:
             .venv
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
-          key: >-
-            os-${{ runner.os }}
-            .py-${{ matrix.python-version }}
-            .${{ hashFiles('poetry.lock') }}
-            .${{ hashFiles('tox.ini') }}
-            .${{ hashFiles('.pre-commit-config.yaml') }}
-            .${{ hashFiles('.github/workflows/requirements.txt') }}
+          key: |
+            os-${{ runner.os }}.py-${{ matrix.python-version }}.${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
 
       - run: python -m pip install -r .github/workflows/requirements.txt
 
@@ -148,13 +143,8 @@ jobs:
             .venv
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
-          key: >-
-            os-${{ runner.os }}
-            .py-${{ matrix.python-version }}
-            .${{ hashFiles('poetry.lock') }}
-            .${{ hashFiles('tox.ini') }}
-            .${{ hashFiles('.pre-commit-config.yaml') }}
-            .${{ hashFiles('.github/workflows/requirements.txt') }}
+          key: |
+            os-${{ runner.os }}.py-${{ matrix.python-version }}.${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
 
       - run: python -m pip install -r .github/workflows/requirements.txt
 
@@ -187,13 +177,8 @@ jobs:
             .venv
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
-          key: >-
-            os-${{ runner.os }}
-            .py-${{ matrix.python-version }}
-            .${{ hashFiles('poetry.lock') }}
-            .${{ hashFiles('tox.ini') }}
-            .${{ hashFiles('.pre-commit-config.yaml') }}
-            .${{ hashFiles('.github/workflows/requirements.txt') }}
+          key: |
+            os-${{ runner.os }}.py-${{ matrix.python-version }}.${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
 
       - run: python -m pip install -r .github/workflows/requirements.txt
 
