@@ -86,7 +86,8 @@ jobs:
         run: |
           echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
 
-      - name: Cache
+      - name: Cache dependencies
+        id: cache-dependencies
         uses: actions/cache@v3
         with:
           path: |
@@ -98,6 +99,8 @@ jobs:
             os-${{ runner.os }}_py-${{ matrix.python-version }}_${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
 
       - run: python -m pip install -r .github/workflows/requirements.txt
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        name: Install dependencies
 
       - run: tox -e py
         env:
