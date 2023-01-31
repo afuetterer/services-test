@@ -7,6 +7,7 @@ on:
   pull_request:
     branches: [main]
 
+# https://docs.github.com/en/actions/using-jobs/using-concurrency
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
