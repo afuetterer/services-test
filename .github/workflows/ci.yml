@@ -62,6 +62,7 @@ jobs:
           tox -e type
 
   test:
+    needs: [lint]
     strategy:
       fail-fast: false
       matrix:
