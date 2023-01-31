@@ -7,6 +7,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 # TODO
 # - add https://github.com/marketplace/actions/harden-runner
 # - add https://github.com/actions/stale
@@ -45,13 +49,8 @@ jobs:
             .venv
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
-          key: >-
-            os-${{ runner.os }}
-            .py-${{ matrix.python-version }}
-            .${{ hashFiles('poetry.lock') }}
-            .${{ hashFiles('tox.ini') }}
-            .${{ hashFiles('.pre-commit-config.yaml') }}
-            .${{ hashFiles('.github/workflows/requirements.txt') }}
+          key: |
+            os-${{ runner.os }}.py-${{ matrix.python-version }}.${{ hashFiles('poetry.lock') }}.${{ hashFiles('.pre-commit-config.yaml') }}.${{ hashFiles('.github/workflows/requirements.txt') }}
 
       - run: |
           python -m pip install -r .github/workflows/requirements.txt
