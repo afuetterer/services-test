@@ -45,9 +45,9 @@ jobs:
             .venv
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
-          key: |
-            os-${{ runner.os }}.
-            py-${{ matrix.python-version }}
+          key: >-
+            os-${{ runner.os }}
+            .py-${{ matrix.python-version }}
             .${{ hashFiles('poetry.lock') }}
             .${{ hashFiles('tox.ini') }}
             .${{ hashFiles('.pre-commit-config.yaml') }}
@@ -101,9 +101,9 @@ jobs:
             .venv
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
-          key: |
-            os-${{ runner.os }}.
-            py-${{ matrix.python-version }}
+          key: >-
+            os-${{ runner.os }}
+            .py-${{ matrix.python-version }}
             .${{ hashFiles('poetry.lock') }}
             .${{ hashFiles('tox.ini') }}
             .${{ hashFiles('.pre-commit-config.yaml') }}
@@ -187,9 +187,9 @@ jobs:
             .venv
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
-          key: |
-            os-${{ runner.os }}.
-            py-${{ matrix.python-version }}
+          key: >-
+            os-${{ runner.os }}
+            .py-${{ matrix.python-version }}
             .${{ hashFiles('poetry.lock') }}
             .${{ hashFiles('tox.ini') }}
             .${{ hashFiles('.pre-commit-config.yaml') }}
