@@ -17,8 +17,6 @@ concurrency:
 # - add https://github.com/actions/stale
 
 # https://github.com/actions/setup-python
-# https://github.com/marketplace/actions/install-poetry-action
-# https://github.com/actions/cache/blob/main/examples.md#python---pip
 
 jobs:
   lint:
@@ -32,8 +30,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      # poetry config cache-dir
-
       - name: Cache
         uses: actions/cache@v3
         with:
@@ -41,14 +37,16 @@ jobs:
             .tox
             .venv
             ~/.cache/pip
+            ~/.cache/pypoetry
             ~/.cache/pre-commit
           key: |
             os-${{ runner.os }}_py-3.11_${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
+          restore-keys: |
+            os-${{ runner.os }}_py-3.11_
 
       - run: |
           python -m pip install -r .github/workflows/requirements.txt
           poetry config virtualenvs.in-project true
-          poetry config --list
 
       - run: |
           python --version
@@ -97,10 +95,12 @@ jobs:
             ~/.cache/pre-commit
           key: |
             os-${{ runner.os }}_py-${{ matrix.python-version }}_${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
+          restore-keys: |
+            os-${{ runner.os }}_py-${{ matrix.python-version }}_
 
-      - run: python -m pip install -r .github/workflows/requirements.txt
-        if: steps.cache-dependencies.outputs.cache-hit != 'true'
-        name: Install dependencies
+      - run: |
+          python -m pip install -r .github/workflows/requirements.txt
+          poetry config virtualenvs.in-project true
 
       - run: tox -e py
         env:
@@ -133,11 +133,16 @@ jobs:
             .tox
             .venv
             ~/.cache/pip
+            ~/.cache/pypoetry
             ~/.cache/pre-commit
           key: |
             os-${{ runner.os }}_py-3.11_${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
+          restore-keys: |
+            os-${{ runner.os }}_py-3.11_
 
-      - run: python -m pip install -r .github/workflows/requirements.txt
+      - run: |
+          python -m pip install -r .github/workflows/requirements.txt
+          poetry config virtualenvs.in-project true
 
       - name: Download .coverage files
         uses: actions/download-artifact@v3
@@ -162,11 +167,16 @@ jobs:
             .tox
             .venv
             ~/.cache/pip
+            ~/.cache/pypoetry
             ~/.cache/pre-commit
           key: |
             os-${{ runner.os }}_py-3.11_${{ hashFiles('poetry.lock', '.pre-commit-config.yaml') }}
+          restore-keys: |
+            os-${{ runner.os }}_py-3.11_
 
-      - run: python -m pip install -r .github/workflows/requirements.txt
+      - run: |
+          python -m pip install -r .github/workflows/requirements.txt
+          poetry config virtualenvs.in-project true
 
       - run: tox -e docs
 
