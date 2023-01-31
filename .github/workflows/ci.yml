@@ -148,7 +148,7 @@ jobs:
             .venv
             ${{ steps.pip-cache.outputs.dir }}
             ~/.cache/pre-commit
-          key: >
+          key: >-
             os-${{ runner.os }}
             .py-${{ matrix.python-version }}
             .${{ hashFiles('poetry.lock') }}
