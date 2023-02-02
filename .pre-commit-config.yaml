@@ -45,3 +45,10 @@ repos:
     rev: v2.40.0
     hooks:
       - id: commitizen
+
+  - repo: local
+    hooks:
+      - id: isort
+        name: Run isort
+        entry: isort
+        language: system
