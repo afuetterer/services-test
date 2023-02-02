@@ -1,5 +1,12 @@
 # Changelog
 
+## [2023.2.3](https://github.com/afuetterer/services-test/compare/2023.2.2...2023.2.3) (2023-02-02)
+
+
+### Documentation
+
+* add changelog to documentation ([540a069](https://github.com/afuetterer/services-test/commit/540a0694135d9074587c0d84ab6af5a8e4ee78e6))
+
 ## 2023.2.2 (2023-02-02)
 
 

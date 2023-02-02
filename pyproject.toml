@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "services-test"
-version = "2023.2.2"
+version = "2023.2.3"
 authors = ["Heinz-Alexander Fuetterer <fuetterh@posteo.de>"]
 description = "services-test"
 license = "MIT"
