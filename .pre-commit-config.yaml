@@ -46,9 +46,11 @@ repos:
     hooks:
       - id: commitizen
 
-  - repo: local
-    hooks:
-      - id: isort
-        name: Run isort
-        entry: isort
-        language: system
+  # - repo: local
+  #   hooks:
+  #     - id: git-cliff
+  #       name: Run git-cliff
+  #       entry: git-cliff
+  #       args: ["--output=CHANGELOG.md"]
+  #       pass_filenames: false
+  #       language: system
