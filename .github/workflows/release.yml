@@ -16,5 +16,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           release-type: python
+          version-file: pyproject.toml
           package-name: services-test
           include-v-in-tag: false
+          pull-request-title-pattern: "bump: ${version}"
