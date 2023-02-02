@@ -19,3 +19,4 @@ jobs:
           version-file: pyproject.toml
           package-name: services-test
           include-v-in-tag: false
+          pull-request-title-pattern: "bump: ${version}"
