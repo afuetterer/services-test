@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../cli/">
       
       
-        <link rel="next" href="../reference/">
+        <link rel="next" href="cli/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.10">
     
     
       
-        <title>Usage - services-test</title>
+        <title>Reference - services-test</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cli-reference" class="md-skip">
+        <a href="#services_test" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Usage
+              Reference
             
           </span>
         </div>
@@ -227,65 +227,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Usage
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
         Usage
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#services-test" class="md-nav__link">
-    services-test
-  </a>
-  
-    <nav class="md-nav" aria-label="services-test">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hello" class="md-nav__link">
-    hello
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -296,21 +242,23 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../reference/">Reference</a>
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Reference</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -318,7 +266,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Reference
@@ -331,7 +279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/cli/" class="md-nav__link">
+      <a href="cli/" class="md-nav__link">
         Cli
       </a>
     </li>
@@ -345,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/lib/" class="md-nav__link">
+      <a href="lib/" class="md-nav__link">
         Lib
       </a>
     </li>
@@ -406,8 +354,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -416,22 +362,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#services-test" class="md-nav__link">
-    services-test
+  <a href="#services_test" class="md-nav__link">
+    services_test
   </a>
-  
-    <nav class="md-nav" aria-label="services-test">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hello" class="md-nav__link">
-    hello
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -454,73 +387,35 @@
 
 
 
-<h1 id="cli-reference">CLI Reference</h1>
-<h2 id="services-test">services-test</h2>
-<p>services-test Command Line Interface.</p>
-<p><strong>Usage:</strong></p>
-<pre><code>services-test [OPTIONS] COMMAND [ARGS]...
-</code></pre>
-<p><strong>Options:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-V</code>, <code>--version</code></td>
-<td>boolean</td>
-<td>Show the version and exit.</td>
-<td><code>False</code></td>
-</tr>
-<tr>
-<td><code>--install-completion</code></td>
-<td>boolean</td>
-<td>Install completion for the current shell.</td>
-<td>None</td>
-</tr>
-<tr>
-<td><code>--show-completion</code></td>
-<td>boolean</td>
-<td>Show completion for the current shell, to copy it or customize the installation.</td>
-<td>None</td>
-</tr>
-<tr>
-<td><code>--help</code></td>
-<td>boolean</td>
-<td>Show this message and exit.</td>
-<td><code>False</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="hello">hello</h3>
-<p>Hello world command.</p>
-<p><strong>Usage:</strong></p>
-<pre><code>services-test hello [OPTIONS] MSG
-</code></pre>
-<p><strong>Options:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--help</code></td>
-<td>boolean</td>
-<td>Show this message and exit.</td>
-<td><code>False</code></td>
-</tr>
-</tbody>
-</table>
+  <h1>Reference</h1>
+
+<div class="doc doc-object doc-module">
+
+
+<a id="services_test"></a>
+  <div class="doc doc-contents first">
+  
+      <p>services-test</p>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
 
 
 
