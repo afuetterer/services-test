@@ -1,3 +1,5 @@
+"""services-test"""
+
 from importlib.metadata import version
 
 __author__ = "Heinz-Alexander Fuetterer"

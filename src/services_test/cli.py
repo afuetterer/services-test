@@ -1,3 +1,5 @@
+"""The Command Line Interface."""
+
 import typer
 
 from services_test import __version__
