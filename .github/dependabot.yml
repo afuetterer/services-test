@@ -6,7 +6,7 @@ updates:
     schedule:
       interval: monthly
     commit-message:
-      prefix: build
+      prefix: chore
       include: scope
 
   - package-ecosystem: pip
@@ -14,7 +14,7 @@ updates:
     schedule:
       interval: monthly
     commit-message:
-      prefix: build
+      prefix: chore
       include: scope
 
   - package-ecosystem: pip
@@ -22,7 +22,7 @@ updates:
     schedule:
       interval: monthly
     commit-message:
-      prefix: build
+      prefix: chore
       include: scope
     versioning-strategy: increase-if-necessary
     allow:
