@@ -25,9 +25,9 @@ jobs:
           extra-args: --freeze
 
       - name: Prettify code
-        uses: creyD/prettier_action@v4.2
+        uses: actionsx/prettier@v2
         with:
-          prettier_options: --write .pre-commit-config.yaml
+          args: --write .pre-commit-config.yaml
 
       - uses: peter-evans/create-pull-request@v4.2.3
         with:
