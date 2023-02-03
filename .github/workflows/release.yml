@@ -30,7 +30,7 @@ jobs:
               {"type":"style","section":"Styling","hidden":false},
               {"type":"test","section":"Testing","hidden":false},
               {"type":"ci","section":"Continuous Integration","hidden":false},
-              {"type":"chore","section":"Miscellaneous Tasks","hidden":false},
+              {"type":"chore","section":"Miscellaneous Tasks","hidden":false}
             ]
           pull-request-title-pattern: "chore: release ${version}"
           release-as: "2023.2.3"
