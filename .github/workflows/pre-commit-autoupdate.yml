@@ -18,6 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: vrslev/pre-commit-autoupdate@v1.0.0
+        with:
+          extra-args: --freeze
       - uses: peter-evans/create-pull-request@v4.2.3
         with:
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
