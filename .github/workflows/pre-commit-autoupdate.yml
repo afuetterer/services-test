@@ -16,10 +16,19 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: vrslev/pre-commit-autoupdate@v1.0.0
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Update pre-commit hooks
+        uses: vrslev/pre-commit-autoupdate@v1.0.0
         with:
           extra-args: --freeze
+
+      - name: Prettify code
+        uses: actionsx/prettier@v2
+        with:
+          args: --write .pre-commit-config.yaml
+
       - uses: peter-evans/create-pull-request@v4.2.3
         with:
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>

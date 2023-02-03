@@ -2,6 +2,9 @@
 # https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/customizing-code-scanning
 name: "CodeQL"
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [main]
