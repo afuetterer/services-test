@@ -27,8 +27,7 @@ jobs:
       - name: Prettify code
         uses: creyD/prettier_action@v4.2
         with:
-          file_pattern: .pre-commit-config.yaml
-          prettier_options: --write
+          prettier_options: --write .pre-commit-config.yaml
 
       - uses: peter-evans/create-pull-request@v4.2.3
         with:
