@@ -44,7 +44,10 @@ mkdocs = ">=1.4.2"
 mkdocstrings = {extras = ["python"], version = ">=0.20.0"}
 mkdocs-click = ">=0.8.0"
 mkdocs-include-markdown-plugin = ">=4.0.3"
+mkdocs-gen-files = ">=0.4.0"
+mkdocs-literate-nav = ">=0.6.0"
 mkdocs-material = ">=9.0.6"
+mkdocs-section-index = ">=0.3.5"
 
 [tool.poetry.scripts]
 services-test = "services_test.__main__:app"
@@ -119,7 +122,7 @@ keep-runtime-typing = true
 current_version = "2023.2.2"
 version_pattern = "YYYY.MM.DD"
 # https://github.com/googleapis/release-please#how-do-i-change-the-version-number
-commit_message = "chore: prepare for {new_version}"
+commit_message = "chore: prepare {new_version}"
 commit = true
 tag = false
 push = false
