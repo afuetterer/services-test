@@ -23,6 +23,14 @@ This repository is used to test services and configurations. Nothing to see here
 
 Python 3.8+
 
+## Installation
+
+You can install _services-test_ via [pip] from [Test PyPI][test-pypi]:
+
+```console
+$ pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple services-test
+```
+
 ## License
 
 This project is licensed under the terms of the MIT license.
@@ -44,3 +52,5 @@ This project is licensed under the terms of the MIT license.
 [pre-commit-badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 [ruff]: https://github.com/charliermarsh/ruff
 [ruff-badge]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json
+[test-pypi]: https://test.pypi.org/
+[pip]: https://pip.pypa.io/
