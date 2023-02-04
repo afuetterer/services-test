@@ -1,5 +1,24 @@
 # Changelog
 
+## [2023.2.4](https://github.com/afuetterer/services-test/compare/2023.2.3...2023.2.4) (2023-02-04)
+
+
+### Documentation
+
+* update readme ([5438c6b](https://github.com/afuetterer/services-test/commit/5438c6bfdd932297327aedda2de5ecf7992dea3b))
+
+
+### Testing
+
+* add test for method ([f560ccf](https://github.com/afuetterer/services-test/commit/f560ccfb37ebc6e294d24bbc90cf28bdd44dd870))
+
+
+### Miscellaneous Tasks
+
+* add html reporting to tox config ([59ef65d](https://github.com/afuetterer/services-test/commit/59ef65dc28ac74926085d0f07fb45fd7eff7e872))
+* prepare 2023.2.4 ([5bb819b](https://github.com/afuetterer/services-test/commit/5bb819bd451bb5869c1f7449b60a4d98ad77ad55))
+* update lockfile ([9a12582](https://github.com/afuetterer/services-test/commit/9a12582bb657dee0b47d6fca65b6df1eed4a64dd))
+
 ## 2023.2.3 (2023-02-03)
 
 
