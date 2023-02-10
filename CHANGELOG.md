@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2023.2.4] (2023-02-04)
+## [2023.2.4] - (2023-02-04)
 
 ### Documentation
 
@@ -15,7 +15,7 @@ All notable changes to this project will be documented in this file.
 - add html reporting to tox config [59ef65d](59ef65dc28ac74926085d0f07fb45fd7eff7e872)
 - update lockfile [9a12582](9a12582bb657dee0b47d6fca65b6df1eed4a64dd)
 
-## [2023.2.3] (2023-02-03)
+## [2023.2.3] - (2023-02-03)
 
 ### Bug Fixes
 
